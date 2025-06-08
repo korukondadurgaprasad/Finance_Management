@@ -1,0 +1,80 @@
+.sticky-icon {
+    z-index: 1001;
+    position: fixed;
+    top: 25%;
+    right: 0%;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sticky-icon a {
+    display: flex;
+    align-items: center;  /* Aligns icon and text horizontally and centers vertically */
+    transform: translate(110px, 0px);
+    border-radius: 50px 0 0 50px;
+    text-align: left;
+    margin: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    transition: all 0.8s;
+  }
+  
+  .sticky-icon a:hover {
+    color: #FFF;
+    transform: translate(0px, 0px);
+  }
+  
+  .sticky-icon a:hover i {
+    transform: rotate(360deg);
+  }
+  
+  .sticky-icon a i {
+    margin-right: 15px;  /* Adds space between the icon and text */
+  }
+  
+  .Linkedin {
+    background-color: #2C80D3;
+    color: #FFF;
+  }
+
+  .Whatsapp{
+    background-color: rgb(35, 180, 35);
+    color: #FFF;
+  }
+  
+  .Youtube {
+    background-color: #fa0910;
+    color: #FFF;
+  }
+  
+  .Gmail {
+    background-color: #20d1e1;
+    color: #FFF;
+  }
+  
+  .Instagram {
+    background-color: #fd1dbe;
+    color: #FFF;
+  }
+  
+  .Google {
+    background: linear-gradient(90deg, yellow, rgb(242, 52, 52), rgb(92, 92, 241), rgb(41, 162, 41));
+    color: #FFF;
+  }
+  
+  .sticky-icon a i {
+    background-color: #FFF;
+    height: 40px;
+    width: 40px;
+    color: #000;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;  /* Adds space between the icon and text */
+    transition: all 0.5s;
+  }
+  

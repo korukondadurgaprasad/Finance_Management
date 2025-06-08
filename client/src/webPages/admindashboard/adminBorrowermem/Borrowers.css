@@ -1,0 +1,155 @@
+.borrowers-container {
+    padding: clamp(1rem, 3vw, 2rem);
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .search-wrapper {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #ffbf00;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  }
+  
+  .search-input::placeholder {
+    color: #a0aec0;
+  }
+  
+  .table-responsive {
+    margin: 1rem 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f1f1f1;
+  }
+  
+  .table-responsive::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .table-responsive::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 4px;
+    border: 2px solid #f1f1f1;
+  }
+  
+  .borrowers-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 800px;
+  }
+  
+  .borrowers-table th {
+    position: sticky;
+    top: 0;
+    background-color: #ffbf00;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    z-index: 10;
+  }
+  
+  .borrowers-table th:hover {
+    background-color: #ffbf00;
+  }
+  
+  .borrowers-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+  }
+  
+  .borrowers-table tbody tr:hover {
+    background-color: #f8fafc;
+  }
+  
+  .borrowers-count {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+  }
+  
+  .loading-state,
+  .error-state {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+    color: #64748b;
+  }
+  
+  .error-state {
+    color: #dc2626;
+  }
+  
+  @media (max-width: 768px) {
+    .borrowers-container {
+      padding: 1rem;
+    }
+  
+    .search-input {
+      font-size: 0.875rem;
+      padding: 0.75rem;
+    }
+  
+    .borrowers-table th,
+    .borrowers-table td {
+      padding: 0.75rem;
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .borrowers-container {
+      padding: 0.75rem;
+    }
+  
+    .search-wrapper {
+      margin-bottom: 1rem;
+    }
+  
+    .borrowers-table th,
+    .borrowers-table td {
+      padding: 0.625rem;
+      font-size: 0.813rem;
+    }
+  
+    .borrowers-count {
+      font-size: 0.75rem;
+    }
+  }
+  
+  @supports (overflow: overlay) {
+    .table-responsive {
+      overflow: overlay;
+    }
+  }

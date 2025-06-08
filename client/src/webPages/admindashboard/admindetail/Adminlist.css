@@ -1,0 +1,280 @@
+/* Adminlist.css */
+.admin-page-wrapper {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.admin-list-container {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  padding: clamp(1rem, 2vw, 2rem);
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.admin-header h1 {
+  margin: 0;
+  color: #333;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+}
+
+.controls-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-container {
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #FFBF00;
+}
+
+/* Table View Styles */
+.table-responsive {
+  flex: 1;
+  overflow-x: auto;
+  border-radius: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #FFBF00 #f0f0f0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.admin-table th {
+  position: sticky;
+  top: 0;
+  background-color: #FFBF00;
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.admin-table th:hover {
+  background-color: #E6AC00;
+}
+
+.admin-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Card View Styles */
+.admin-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.admin-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-2px);
+}
+
+.card-header {
+  background-color: #FFBF00;
+  padding: 1rem;
+  color: white;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.card-actions {
+  display: flex;
+  padding: 1rem;
+  gap: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.edit-btn {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.delete-btn {
+  background-color: #fff1f0;
+  color: #ff4d4f;
+}
+
+.edit-btn:hover {
+  background-color: #bae7ff;
+}
+
+.delete-btn:hover {
+  background-color: #ffa39e;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: #666;
+}
+
+.loader {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #FFBF00;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.no-data {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+/* Scrollbar Styles */
+.table-responsive::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: #FFBF00;
+  border-radius: 3px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .controls-container {
+    flex-direction: column;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-list-container {
+    padding: 0.75rem;
+  }
+
+  .admin-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .admin-page-wrapper {
+    background: white;
+  }
+
+  .admin-list-container {
+    box-shadow: none;
+  }
+
+  .controls-container,
+  .action-buttons {
+    display: none;
+  }
+}

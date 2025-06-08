@@ -1,0 +1,128 @@
+/* src/components/Lendermem.css */
+.table-container {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.loading-container,
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.1rem;
+}
+
+.error-container {
+    color: #dc2626;
+}
+
+.search-container {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #f9f9f9;
+    padding: 1rem 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #ffbf00;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.table-wrapper {
+    overflow: auto;
+    flex-grow: 1;
+    border-radius: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 4px;
+}
+
+.ant-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 0.5rem;
+}
+
+.ant-table-thead > tr > th {
+    background-color: #ffbf00;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.ant-table-tbody > tr > td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.ant-table-tbody > tr:hover {
+    background-color: #f8fafc;
+}
+
+.lender-count {
+    padding: 1rem 0;
+    color: #4b5563;
+    font-weight: 500;
+    text-align: right;
+}
+
+@media (max-width: 640px) {
+    .table-container {
+        padding: 1rem;
+        height: calc(100vh - 2rem);
+    }
+
+    .search-input {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td {
+        padding: 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ant-table {
+        min-width: 800px;
+    }
+}

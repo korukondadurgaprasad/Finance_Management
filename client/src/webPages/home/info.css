@@ -1,0 +1,129 @@
+.info_main_container_x7f92 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.info_heading_title_d3e45 {
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: clamp(30px, 5vh, 40px);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.info_content_wrapper_j9k42 {
+  display: flex;
+  gap: clamp(20px, 4vw, 40px);
+  align-items: stretch;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info_image_container_h2l56 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.info_main_image_b8h31 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  
+}
+
+.info_text_container_m4p73 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.info_description_text_f5n91 {
+  color: #000;
+  font-style: italic;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px 0;
+}
+
+/* Large screens */
+@media (min-width: 1441px) {
+  .info_content_wrapper_j9k42 {
+      max-width: 1400px;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  .info_main_container_x7f92 {
+      padding: 30px 15px;
+  }
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+  .info_main_container_x7f92 {
+      padding: 20px 15px;
+      min-height: auto;
+  }
+
+  .info_content_wrapper_j9k42 {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .info_image_container_h2l56 {
+      min-height: 250px;
+      width: 100%;
+  }
+
+  .info_main_image_b8h31 {
+      max-height: 300px;
+  }
+
+  .info_text_container_m4p73 {
+      width: 100%;
+  }
+
+  .info_description_text_f5n91 {
+      padding: 10px 0;
+      text-align: center;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .info_main_container_x7f92 {
+      padding: 15px 10px;
+  }
+
+  .info_heading_title_d3e45 {
+      margin-bottom: 20px;
+  }
+
+  .info_image_container_h2l56 {
+      min-height: 200px;
+  }
+
+  .info_main_image_b8h31 {
+      max-height: 250px;
+  }
+
+  .info_description_text_f5n91 {
+      font-size: 1rem;
+      padding: 5px 0;
+  }
+}

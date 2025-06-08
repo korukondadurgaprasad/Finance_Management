@@ -1,0 +1,115 @@
+.mainAppContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContentWrapper {
+    flex: 1;
+  }
+  
+  .mainNavigationBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navigationLogoContainer {
+    flex: 1;
+  }
+  
+  .navigationLogoText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .navigationLinksWrapper {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navigationLink {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navigationLink:hover {
+    color: #007bff;
+  }
+  
+  .navigationMobileToggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .navigationHamburgerIcon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    position: relative;
+  }
+  
+  .navigationHamburgerIcon::before,
+  .navigationHamburgerIcon::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    left: 0;
+  }
+  
+  .navigationHamburgerIcon::before {
+    top: -8px;
+  }
+  
+  .navigationHamburgerIcon::after {
+    bottom: -8px;
+  }
+  
+  .mainHeroSection,
+  .mainAboutSection,
+  .mainServicesSection,
+  .mainContactSection {
+    min-height: 100vh;
+    padding: 80px 20px 20px;
+    scroll-margin-top: 80px;
+  }
+  
+  @media (max-width: 768px) {
+    .navigationMobileToggle {
+      display: block;
+    }
+  
+    .navigationLinksWrapper {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1rem;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  
+    .navigationShow {
+      display: flex;
+    }
+  }

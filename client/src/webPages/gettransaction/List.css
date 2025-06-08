@@ -1,0 +1,145 @@
+/* List.css */
+.transaction_history_management_container_wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.transaction_history_content_section_container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.transaction_history_image_display_container {
+    flex: 1;
+    max-width: 400px;
+}
+
+.transaction_history_display_image_element {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transaction_history_form_display_container {
+    flex: 2;
+}
+
+.transaction_history_date_input_form_wrapper {
+    margin-bottom: 30px;
+}
+
+.transaction_history_date_input_fields_container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.transaction_history_input_field_group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.transaction_history_input_field_label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.transaction_history_start_date_input_field,
+.transaction_history_end_date_input_field {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.transaction_history_generate_button_element {
+    background-color: #FFBF00;
+    color: black;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.transaction_history_generate_button_element:hover {
+    opacity: 0.9;
+}
+
+.transaction_history_results_display_container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transaction_history_table_scroll_wrapper {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.transaction_history_data_table_element {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.transaction_history_data_table_element th,
+.transaction_history_data_table_element td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.transaction_history_data_table_element th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.transaction_history_data_table_element tr:hover {
+    background-color: #f9f9f9;
+}
+
+.transaction_history_download_button_element {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.transaction_history_download_button_element:hover {
+    background-color: #FFBF00;
+}
+
+@media (max-width: 768px) {
+    .transaction_history_content_section_container {
+        flex-direction: column;
+    }
+    
+    .transaction_history_image_display_container {
+        max-width: 100%;
+    }
+    
+    .transaction_history_date_input_fields_container {
+        flex-direction: column;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

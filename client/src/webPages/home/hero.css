@@ -1,0 +1,136 @@
+.hero_container_x9f42 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.hero_content_wrapper_k7h31 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 2rem;
+}
+
+.hero_text_container_m4p56 {
+  flex: 1;
+  max-width: 600px;
+  padding-right: 20px;
+}
+
+.hero_heading_j2l89 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  color: black;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+}
+
+.hero_highlight_text_q8w23 {
+  color: #FFBF00;
+  font-weight: bold;
+}
+
+.hero_business_text_n5r67 {
+  font-weight: bold;
+}
+
+.hero_description_h6t45 {
+  font-style: italic;
+  color: black;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  max-width: 90%;
+}
+
+.hero_explore_button_f3k78 {
+  background-color: #FFBF00;
+  color: black;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero_explore_button_f3k78:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.hero_image_container_b9m34 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+}
+
+.hero_main_image_v5x12 {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .hero_content_wrapper_k7h31 {
+      padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero_container_x9f42 {
+      padding-top: 80px; /* Account for navbar */
+  }
+
+  .hero_content_wrapper_k7h31 {
+      flex-direction: column-reverse;
+      text-align: center;
+      padding: 20px;
+  }
+
+  .hero_text_container_m4p56 {
+      padding-right: 0;
+      max-width: 100%;
+  }
+
+  .hero_heading_j2l89 {
+      white-space: normal;
+      font-size: 2.5rem;
+  }
+
+  .hero_description_h6t45 {
+      margin: 2rem auto;
+      max-width: 100%;
+  }
+
+  .hero_image_container_b9m34 {
+      max-width: 80%;
+      margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero_content_wrapper_k7h31 {
+      padding: 10px;
+  }
+
+  .hero_heading_j2l89 {
+      font-size: 2rem;
+  }
+
+  .hero_image_container_b9m34 {
+      max-width: 90%;
+  }
+}

@@ -1,0 +1,148 @@
+.admin-header-container__main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fbbf00;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+    height: 70px;
+  }
+  
+  .admin-header-container__left-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggle-menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 5px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .toggle-menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .admin-header-container__user-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-header-container__profile-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #f16e4f;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    overflow: hidden;
+    border: 2px solid #fff;
+  }
+  
+  .admin-header-container__username {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+  }
+  
+  .admin-header-container__logout-button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-header-container__logout-button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .admin-header-container__main {
+      padding: 0 15px;
+      height: 60px;
+    }
+  
+    .admin-header-container__profile-image {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+  
+    .admin-header-container__username {
+      font-size: 16px;
+      max-width: 150px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
+    .admin-header-container__logout-button {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+    
+    .toggle-menu-button {
+      font-size: 20px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .admin-header-container__main {
+      padding: 0 12px;
+      height: 55px;
+    }
+  
+    .admin-header-container__profile-image {
+      width: 35px;
+      height: 35px;
+      margin-right: 8px;
+      font-size: 14px;
+    }
+  
+    .admin-header-container__username {
+      font-size: 14px;
+      max-width: 100px;
+    }
+  
+    .admin-header-container__logout-button {
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+    
+    .toggle-menu-button {
+      font-size: 18px;
+      width: 32px;
+      height: 32px;
+      padding: 6px;
+    }
+  }

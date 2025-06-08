@@ -1,0 +1,364 @@
+/* TransactionDetails.css */
+.transaction-details-container {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.transaction-details-container h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .controls {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.search-container {
+  flex: 1;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .search-container {
+    max-width: 400px;
+  }
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ffbf00;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+}
+
+.download-button {
+  padding: 0.75rem 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .download-button {
+    width: auto;
+  }
+}
+
+.download-button:hover {
+  background-color: #218838;
+}
+
+.table-wrapper {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ffbf00 #f5f5f5;
+  border-radius: 8px;
+  background: #ffbf00;
+}
+
+/* Custom scrollbar styles */
+.table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #ffbf00;
+  border-radius: 4px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #e6ac00;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 800px;
+}
+
+.transaction-table th {
+  background-color: #ffbf00;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.transaction-table th:hover {
+  background-color: #e6ac00;
+}
+
+.transaction-table td {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+}
+
+.transaction-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+/* Responsive table */
+@media screen and (max-width: 767px) {
+  .transaction-table {
+    min-width: unset;
+  }
+
+  .transaction-table thead {
+    display: none;
+  }
+
+  .transaction-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+  }
+
+  .transaction-table td {
+    display: block;
+    text-align: right;
+    padding: 0.75rem;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .transaction-table td:last-child {
+    border-bottom: none;
+  }
+
+  .transaction-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    color: #666;
+  }
+}
+
+.amount {
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.amount.credit {
+  color: #dc3545;
+}
+
+.amount.debit {
+  color: #28a745;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.status-badge.credit {
+  background-color: #fde8e8;
+  color: #dc3545;
+}
+
+.status-badge.debit {
+  background-color: #e8f5e9;
+  color: #28a745;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.page-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.pagination-button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  min-width: 40px;
+  font-size: 0.875rem;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.pagination-button.active {
+  background-color: #ffbf00;
+  color: white;
+  border-color: #ffbf00;
+}
+
+.pagination-button:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  color: #999;
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .page-numbers {
+    order: 2;
+  }
+
+  .pagination-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.125rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.loading::after {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #ffbf00;
+  border-radius: 50%;
+  border-top-color: transparent;
+  margin-left: 0.75rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  text-align: center;
+  padding: 1.5rem;
+  color: #dc3545;
+  background-color: #fde8e8;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive font sizes */
+@media (max-width: 480px) {
+  .transaction-details-container {
+    padding: 0.75rem;
+  }
+
+  .transaction-table td,
+  .transaction-table th {
+    padding: 0.75rem;
+  }
+
+  .button-text {
+    display: none;
+  }
+
+  .download-button {
+    padding: 0.75rem;
+    justify-content: center;
+  }
+}
+
+/* Print styles */
+@media print {
+  .controls,
+  .pagination {
+    display: none;
+  }
+
+  .transaction-details-container {
+    padding: 0;
+    max-width: none;
+  }
+
+  .table-scroll {
+    overflow: visible;
+  }
+
+  .transaction-table {
+    min-width: 100%;
+  }
+
+  .transaction-table th {
+    background-color: #fff !important;
+    color: #000;
+  }
+
+  .status-badge {
+    border: 1px solid #000;
+  }
+}

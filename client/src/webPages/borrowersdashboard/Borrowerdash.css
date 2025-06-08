@@ -1,0 +1,87 @@
+/* General Layout */
+.admin-app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  .admin-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin-hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  /* Content Area */
+  .admin-content {
+    margin-left: 0px;
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 70px);
+    margin-top: 70px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media (max-width: 768px) {
+    .admin-hamburger-menu {
+      display: block;
+      position: fixed;
+      top: 60px;  /* Changed from 20px to 25px to move it down */
+      left: 20px;
+      z-index: 1001;
+      padding: 12px;  /* Increased padding for better touch target */
+      /* margin-top: 45px;  Added margin-top for additional adjustment */
+    }
+  
+    .sidebar {
+      transform: translateX(-100%);
+      width: 80%;
+      max-width: 300px;
+      z-index: 1000;
+      top: 90px;
+      height: 100vh;
+      padding-top: 80px;
+    }
+  
+    .sidebar.open {
+      transform: translateX(0);
+    }
+  
+    .admin-content {
+      margin-left: 0;
+      padding-top: 60px;
+    }
+  
+    /* Overlay when sidebar is open */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  
+    .overlay.active {
+      display: block;
+    }
+  }
+  
+  /* Rest of your existing CSS remains the same */

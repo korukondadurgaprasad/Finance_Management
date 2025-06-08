@@ -1,0 +1,129 @@
+/* Dashboard layout */
+.user-interface-dashboard__main-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Overlay for mobile sidebar */
+.user-interface-dashboard__overlay-background {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.user-interface-dashboard__overlay-background--visible {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sidebar */
+.user-interface-dashboard__sidebar-wrapper {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 70px);
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.user-interface-dashboard__sidebar-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding: 0 20px;
+}
+
+.user-interface-dashboard__navigation-container {
+  width: 100%;
+}
+
+.user-interface-dashboard__navigation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.user-interface-dashboard__navigation-item {
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.user-interface-dashboard__navigation-link {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+  width: 100%;
+}
+
+.user-interface-dashboard__navigation-link:hover,
+.user-interface-dashboard__navigation-link--active {
+  background-color: #ffca28;
+  color: #000;
+  font-weight: 500;
+  border-left-color: #ff9800;
+}
+
+/* Main content area */
+.user-interface-dashboard__content-section {
+  flex: 1;
+  margin-left: 250px;
+  margin-top: 70px;
+  padding: 20px;
+  min-height: calc(100vh - 70px);
+  background-color: #f9f9f9;
+  transition: margin-left 0.3s ease;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .user-interface-dashboard__sidebar-wrapper {
+    transform: translateX(-100%);
+    width: 280px;
+  }
+
+  .user-interface-dashboard__sidebar-wrapper--expanded {
+    transform: translateX(0);
+  }
+
+  .user-interface-dashboard__content-section {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .user-interface-dashboard__sidebar-heading {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-interface-dashboard__sidebar-wrapper {
+    width: 85%;
+    padding: 15px 0;
+  }
+  
+  .user-interface-dashboard__content-section {
+    padding: 15px;
+  }
+  
+  .user-interface-dashboard__navigation-link {
+    padding: 10px 15px;
+  }
+}
