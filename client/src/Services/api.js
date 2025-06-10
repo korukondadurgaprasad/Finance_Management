@@ -1,8 +1,8 @@
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const handleResponse = async (response) => {
   const data = await response.json();
-  
+
   if (!response.ok) {
     if (response.status === 401) {
       localStorage.removeItem('accessToken');
@@ -10,7 +10,7 @@ const handleResponse = async (response) => {
     }
     throw new Error(data.detail || 'API request failed');
   }
-  
+
   return data;
 };
 
@@ -19,7 +19,7 @@ const getHeaders = () => {
   if (!token) {
     throw new Error('No authentication token found');
   }
-  
+
   return {
     'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export const api = {
       if (!response.ok) {
         throw new Error(data.detail || 'Signup failed');
       }
-      
+
       return data;
     } catch (error) {
       console.error('Signup error:', error);
@@ -73,19 +73,19 @@ export const api = {
         const errorData = await response.json();
         throw new Error(errorData.detail || 'Invalid credentials');
       }
-      
+
       const data = await response.json();
-      
+
       // Handle both admin and regular user responses
       if (!data.access_token || !data.role) {
         throw new Error('Invalid response from server');
       }
-      
+
       // For admin login, we don't require user_id
       if (data.role !== 'admin' && !data.user_id) {
         throw new Error('Invalid response from server');
       }
-      
+
       return data;
     } catch (error) {
       console.error('Login error:', error);
@@ -204,7 +204,7 @@ export const api = {
         method: 'GET',
         headers: api.getAuthHeaders(),
       });
-      
+
       if (!response.ok) {
         if (response.status === 401) {
           localStorage.clear();
@@ -214,7 +214,7 @@ export const api = {
         const errorData = await response.json();
         throw new Error(errorData.detail || 'Failed to fetch customer details');
       }
-      
+
       return await response.json();
     } catch (error) {
       throw error;
@@ -239,13 +239,13 @@ export const api = {
         const errorData = await response.json();
         throw new Error(errorData.detail || 'Failed to add transaction');
       }
-      
+
       return await response.json();
     } catch (error) {
       throw error;
     }
   },
-  
+
 
   getCustomerTransactions: async (customerId) => {
     try {
@@ -253,7 +253,7 @@ export const api = {
         method: 'GET',
         headers: api.getAuthHeaders(),
       });
-      
+
       if (!response.ok) {
         if (response.status === 401) {
           localStorage.clear();
@@ -263,7 +263,7 @@ export const api = {
         const errorData = await response.json();
         throw new Error(errorData.detail || 'Failed to fetch transactions');
       }
-      
+
       return await response.json();
     } catch (error) {
       throw error;
@@ -298,7 +298,7 @@ export const api = {
         const errorData = await response.json();
         throw new Error(errorData.detail || 'Failed to fetch transactions');
       }
-      
+
       return await response.json();
     } catch (error) {
       console.error('Error fetching transactions:', error);
@@ -374,7 +374,7 @@ export const api = {
         method: 'GET',
         headers: getHeaders(),
       });
-      
+
       return handleResponse(response);
     } catch (error) {
       console.error('Get admin list error:', error);
@@ -389,7 +389,7 @@ export const api = {
         headers: getHeaders(),
         body: JSON.stringify(adminData),
       });
-      
+
       return handleResponse(response);
     } catch (error) {
       console.error('Update admin error:', error);
@@ -403,7 +403,7 @@ export const api = {
         method: 'DELETE',
         headers: getHeaders(),
       });
-      
+
       return handleResponse(response);
     } catch (error) {
       console.error('Delete admin error:', error);
